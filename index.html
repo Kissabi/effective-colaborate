@@ -171,6 +171,8 @@
   .company-logo.placeholder {
     display: grid; place-items: center; font-weight: 900; font-size: 1.3rem; color: #1a1205;
   }
+  .company-logo.logo-wrap { display: grid; place-items: center; background: rgba(255,255,255,0.05); }
+  .company-logo.logo-wrap img { width: 36px; height: 36px; object-fit: contain; }
   .company-head .meta h4 { font-size: 1.12rem; }
   .company-head .meta span { font-size: 0.82rem; color: var(--muted-2); }
   .company .tag {
@@ -365,107 +367,105 @@
     </div>
     <div class="companies-grid">
 
-      <!-- MBC (featured, real logo from root) -->
-      <div class="company featured">
-        <span class="tag core">Featured customer</span>
+      <div class="company">
+        <span class="tag partner">Sweden</span>
         <div class="company-head">
-          <img class="company-logo" src="logo_mbc.png" alt="MBC — Sons de Angola logo" />
+          <div class="company-logo logo-wrap"><img src="https://cdn.simpleicons.org/spotify/1DB954" alt="Spotify logo" /></div>
           <div class="meta">
-            <h4>MBC — Sons de Angola</h4>
-            <span>Music Business Corporation · Angola</span>
+            <h4>Spotify</h4>
+            <span>Audio streaming</span>
           </div>
         </div>
-        <p>A music streaming ecosystem that distributed its engineering between a core team in Angola and consultancies in Germany, the US, the UK, and Portugal.</p>
+        <p>Coordinates audio-platform squads across Stockholm, New York, and Boston for low-latency streaming at scale.</p>
         <div class="chips">
           <span class="chip">Streaming</span>
-          <span class="chip">FastAPI</span>
-          <span class="chip">Cloudflare R2</span>
-          <span class="chip">PWA</span>
+          <span class="chip">Backend</span>
+          <span class="chip">Scale</span>
         </div>
       </div>
 
       <div class="company">
-        <span class="tag partner">Consultancy</span>
+        <span class="tag partner">United States</span>
         <div class="company-head">
-          <div class="company-logo placeholder" style="background:linear-gradient(135deg,#3b82f6,#60a5fa)">DS</div>
+          <div class="company-logo logo-wrap"><img src="https://cdn.simpleicons.org/airbnb/FF5A5F" alt="Airbnb logo" /></div>
           <div class="meta">
-            <h4>DataShield Engineers</h4>
-            <span>Security & DB · Germany / US</span>
+            <h4>Airbnb</h4>
+            <span>Travel platform</span>
           </div>
         </div>
-        <p>PostgreSQL optimization, concurrency mitigation, and JWT token encryption for high-load platforms.</p>
+        <p>Splits booking-infrastructure and search work between core teams and specialist consultancies worldwide.</p>
         <div class="chips">
-          <span class="chip">PostgreSQL</span>
-          <span class="chip">Security</span>
-          <span class="chip">JWT</span>
+          <span class="chip">Travel</span>
+          <span class="chip">Infra</span>
+          <span class="chip">Search</span>
         </div>
       </div>
 
       <div class="company">
-        <span class="tag partner">Consultancy</span>
+        <span class="tag partner">Ireland / US</span>
         <div class="company-head">
-          <div class="company-logo placeholder" style="background:linear-gradient(135deg,#8b5cf6,#a78bfa)">CA</div>
+          <div class="company-logo logo-wrap"><img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Stripe logo" /></div>
           <div class="meta">
-            <h4>CloudArch Experts</h4>
-            <span>Cloud Architecture · UK / US</span>
+            <h4>Stripe</h4>
+            <span>Payments</span>
           </div>
         </div>
-        <p>High-performance storage, short-lived presigned URLs, and Edge security at global scale.</p>
+        <p>Distributes payments and fraud-prevention modules across globally distributed engineering teams.</p>
         <div class="chips">
-          <span class="chip">Cloudflare</span>
-          <span class="chip">Edge / CDN</span>
-          <span class="chip">Presigned URLs</span>
-        </div>
-      </div>
-
-      <div class="company">
-        <span class="tag partner">Freelancers</span>
-        <div class="company-head">
-          <div class="company-logo placeholder" style="background:linear-gradient(135deg,#10b981,#34d399)">PW</div>
-          <div class="meta">
-            <h4>PWA Collective</h4>
-            <span>Senior UX & PWA · Portugal</span>
-          </div>
-        </div>
-        <p>Fast SPA routes, Service Workers for audio caching, and OS integration via the Media Session API.</p>
-        <div class="chips">
-          <span class="chip">PWA</span>
-          <span class="chip">Service Workers</span>
-          <span class="chip">UX</span>
-        </div>
-      </div>
-
-      <div class="company">
-        <span class="tag partner">Customer</span>
-        <div class="company-head">
-          <div class="company-logo placeholder" style="background:linear-gradient(135deg,#f59e0b,#fbbf24)">NV</div>
-          <div class="meta">
-            <h4>Nova Logistics</h4>
-            <span>Supply chain · Brazil</span>
-          </div>
-        </div>
-        <p>Coordinates back-end teams across three continents for a real-time tracking platform.</p>
-        <div class="chips">
-          <span class="chip">Logistics</span>
-          <span class="chip">IoT</span>
-          <span class="chip">Realtime</span>
-        </div>
-      </div>
-
-      <div class="company">
-        <span class="tag partner">Customer</span>
-        <div class="company-head">
-          <div class="company-logo placeholder" style="background:linear-gradient(135deg,#ef4444,#f87171)">FT</div>
-          <div class="meta">
-            <h4>FinTrust</h4>
-            <span>Financial services · Mozambique</span>
-          </div>
-        </div>
-        <p>Distributes security audits and API development across internal teams and certified partners.</p>
-        <div class="chips">
-          <span class="chip">Fintech</span>
-          <span class="chip">Compliance</span>
+          <span class="chip">Payments</span>
+          <span class="chip">Fraud</span>
           <span class="chip">APIs</span>
+        </div>
+      </div>
+
+      <div class="company">
+        <span class="tag partner">Canada</span>
+        <div class="company-head">
+          <div class="company-logo logo-wrap"><img src="https://cdn.simpleicons.org/shopify/7AB55C" alt="Shopify logo" /></div>
+          <div class="meta">
+            <h4>Shopify</h4>
+            <span>E-commerce</span>
+          </div>
+        </div>
+        <p>Manages storefront performance and edge-caching work across remote teams in 20+ countries.</p>
+        <div class="chips">
+          <span class="chip">E-commerce</span>
+          <span class="chip">Edge</span>
+          <span class="chip">Performance</span>
+        </div>
+      </div>
+
+      <div class="company">
+        <span class="tag partner">All-remote</span>
+        <div class="company-head">
+          <div class="company-logo logo-wrap"><img src="https://cdn.simpleicons.org/gitlab/FC6D26" alt="GitLab logo" /></div>
+          <div class="meta">
+            <h4>GitLab</h4>
+            <span>DevOps platform</span>
+          </div>
+        </div>
+        <p>Runs an all-remote engineering org, orchestrating DevOps and CI/CD modules across every time zone.</p>
+        <div class="chips">
+          <span class="chip">DevOps</span>
+          <span class="chip">Remote</span>
+          <span class="chip">CI/CD</span>
+        </div>
+      </div>
+
+      <div class="company">
+        <span class="tag partner">Australia</span>
+        <div class="company-head">
+          <div class="company-logo logo-wrap"><img src="https://cdn.simpleicons.org/atlassian/2684FF" alt="Atlassian logo" /></div>
+          <div class="meta">
+            <h4>Atlassian</h4>
+            <span>Software collaboration</span>
+          </div>
+        </div>
+        <p>Coordinates collaboration-suite engineering between Sydney, Amsterdam, and Bengaluru.</p>
+        <div class="chips">
+          <span class="chip">SaaS</span>
+          <span class="chip">Collaboration</span>
+          <span class="chip">Cloud</span>
         </div>
       </div>
 
