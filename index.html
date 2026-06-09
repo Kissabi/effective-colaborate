@@ -188,6 +188,29 @@
   /* ---------- CASE STUDY ---------- */
   .case-head { display: flex; align-items: center; gap: 18px; margin-bottom: 8px; }
   .case-logo { width: 84px; height: 84px; border-radius: 16px; object-fit: cover; background:#000; border:1px solid var(--line); }
+  .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 52px; }
+  .case-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 28px; display: flex; flex-direction: column; transition: border-color .2s, transform .2s;
+  }
+  .case-card:hover { border-color: var(--amber); transform: translateY(-4px); }
+  .case-card.featured { border-color: rgba(255,138,30,0.5); background: linear-gradient(180deg, rgba(255,138,30,0.07), var(--card)); }
+  .case-card .ch { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+  .case-card .clogo { width: 56px; height: 56px; border-radius: 12px; object-fit: contain; background: #000; border: 1px solid var(--line); padding: 9px; flex-shrink: 0; }
+  .case-card .clogo.icon { background: rgba(255,255,255,0.05); }
+  .case-card .ch h4 { font-size: 1.12rem; }
+  .case-card .ch span { font-size: 0.8rem; color: var(--muted-2); }
+  .case-card > p { color: var(--muted); font-size: 0.93rem; flex: 1; }
+  .case-metrics { display: flex; gap: 22px; margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .case-metrics .m .v { font-size: 1.45rem; font-weight: 850; letter-spacing: -0.02em; }
+  .case-metrics .m .k { font-size: 0.72rem; color: var(--muted-2); text-transform: uppercase; letter-spacing: 0.05em; }
+  .read-more { display: inline-block; margin-top: 16px; color: var(--amber); font-weight: 700; font-size: 0.88rem; }
+  .read-more:hover { text-decoration: underline; }
+  .featured-tag {
+    align-self: flex-start; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--gold); background: rgba(232,184,75,0.14); border: 1px solid rgba(232,184,75,0.3);
+    padding: 4px 11px; border-radius: 100px; margin-bottom: 14px;
+  }
 
   /* ---------- MATRIX TABLE ---------- */
   .matrix { margin-top: 44px; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
@@ -222,13 +245,13 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width: 900px) {
-    .grid-3, .companies-grid { grid-template-columns: 1fr 1fr; }
+    .grid-3, .companies-grid, .cases-grid { grid-template-columns: 1fr 1fr; }
     .flow { grid-template-columns: 1fr 1fr; }
     .flow-node:nth-child(2)::after { display: none; }
     .nav-links { display: none; }
   }
   @media (max-width: 620px) {
-    .grid-3, .companies-grid, .flow { grid-template-columns: 1fr; }
+    .grid-3, .companies-grid, .flow, .cases-grid { grid-template-columns: 1fr; }
     .flow-node::after { content: "↓"; right: 50%; top: auto; bottom: -22px; transform: translateX(50%); }
     .flow-node:last-child::after { display: none; }
     .hero-stats { gap: 30px; }
@@ -247,7 +270,7 @@
       <a href="#features">Features</a>
       <a href="#how">How it works</a>
       <a href="#companies">Companies</a>
-      <a href="#case-study">Case study</a>
+      <a href="#case-study">Case studies</a>
     </nav>
     <div class="nav-cta">
       <a href="#" class="btn btn-ghost">Sign in</a>
@@ -473,18 +496,83 @@
   </div>
 </section>
 
-<!-- CASE STUDY (MBC) -->
+<!-- CASE STUDIES OF THE WEEK -->
 <section id="case-study" class="flow-wrap" style="background:var(--bg-soft)">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-tag">Customer case study</span>
+    <div class="sec-head center">
+      <span class="sec-tag">This week</span>
+      <h2 class="sec-title">Case studies of the week</h2>
+      <p class="sec-sub">Three teams that reshaped how they ship engineering across borders — refreshed every week.</p>
+    </div>
+
+    <div class="cases-grid">
+
+      <!-- Grab -->
+      <div class="case-card">
+        <span class="featured-tag" style="color:var(--muted);background:rgba(154,154,166,0.12);border-color:var(--line)">Super-app</span>
+        <div class="ch">
+          <div class="clogo icon"><img src="https://cdn.simpleicons.org/grab/00B14F" alt="Grab logo" style="width:100%;height:100%;object-fit:contain" /></div>
+          <div>
+            <h4>Grab</h4>
+            <span>Singapore · Mobility & payments</span>
+          </div>
+        </div>
+        <p>Distributed its ride-hailing and payments engineering across eight Southeast Asian markets, letting regional edge teams own local latency while the core kept business logic unified.</p>
+        <div class="case-metrics">
+          <div class="m"><div class="v grad-txt">8</div><div class="k">Markets</div></div>
+          <div class="m"><div class="v grad-txt">−42%</div><div class="k">p99 latency</div></div>
+        </div>
+        <a href="#" class="read-more">Read the story →</a>
+      </div>
+
+      <!-- MBC (featured, in the middle) -->
+      <div class="case-card featured">
+        <span class="featured-tag">Featured</span>
+        <div class="ch">
+          <div class="clogo"><img src="logo_mbc.png" alt="MBC — Sons de Angola logo" style="width:100%;height:100%;object-fit:contain;border-radius:4px" /></div>
+          <div>
+            <h4>MBC — Sons de Angola</h4>
+            <span>Angola · Music streaming</span>
+          </div>
+        </div>
+        <p>Split its streaming platform across a local core in Angola and four overseas specialist teams in Germany, the US, the UK, and Portugal — coordinated entirely through Orquestra.</p>
+        <div class="case-metrics">
+          <div class="m"><div class="v grad-txt">5</div><div class="k">Countries</div></div>
+          <div class="m"><div class="v grad-txt">−38%</div><div class="k">Bandwidth cost</div></div>
+        </div>
+        <a href="#mbc-matrix" class="read-more">See the effort matrix →</a>
+      </div>
+
+      <!-- Nubank -->
+      <div class="case-card">
+        <span class="featured-tag" style="color:var(--muted);background:rgba(154,154,166,0.12);border-color:var(--line)">Fintech</span>
+        <div class="ch">
+          <div class="clogo icon"><img src="https://cdn.simpleicons.org/nubank/820AD1" alt="Nubank logo" style="width:100%;height:100%;object-fit:contain" /></div>
+          <div>
+            <h4>Nubank</h4>
+            <span>Brazil · Digital bank</span>
+          </div>
+        </div>
+        <p>Coordinated security audits and core-banking modules between São Paulo, Berlin, and remote specialists, keeping compliance reviews in lockstep with feature delivery.</p>
+        <div class="case-metrics">
+          <div class="m"><div class="v grad-txt">3</div><div class="k">Hubs</div></div>
+          <div class="m"><div class="v grad-txt">99.99%</div><div class="k">Uptime</div></div>
+        </div>
+        <a href="#" class="read-more">Read the story →</a>
+      </div>
+
+    </div>
+
+    <!-- MBC detailed matrix -->
+    <div id="mbc-matrix" class="sec-head" style="margin-top:72px">
+      <span class="sec-tag">Inside the featured case</span>
       <div class="case-head">
         <img class="case-logo" src="logo_mbc.png" alt="MBC — Sons de Angola logo" />
         <div>
-          <h2 class="sec-title" style="font-size:clamp(1.6rem,3vw,2.2rem)">How MBC distributed its engineering</h2>
+          <h2 class="sec-title" style="font-size:clamp(1.6rem,3vw,2.2rem)">MBC's component-assignment matrix</h2>
         </div>
       </div>
-      <p class="sec-sub" style="max-width:760px">MBC (Music Business Corporation) used Orquestra to split its streaming platform across a local core and four overseas specialist teams. This is the component-assignment matrix it produced — generated directly from the platform.</p>
+      <p class="sec-sub" style="max-width:760px">The full breakdown MBC produced in Orquestra — every critical module mapped to the team, location, and complexity that owns it.</p>
     </div>
     <div class="matrix">
       <table>
