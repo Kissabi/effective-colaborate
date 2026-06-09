@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Orquestra — Gestão de Engenharia para Equipas Internacionais</title>
+<meta name="description" content="Orquestra distribui, monitoriza e sincroniza tarefas de engenharia entre equipas internacionais — do core local às consultorias estrangeiras." />
+<style>
+  :root {
+    --bg: #0a0a0c;
+    --bg-soft: #121216;
+    --card: #16161c;
+    --card-2: #1c1c24;
+    --line: #2a2a33;
+    --txt: #f4f4f6;
+    --muted: #9a9aa6;
+    --muted-2: #6f6f7a;
+    --amber: #ff8a1e;
+    --amber-2: #ffb152;
+    --red: #d62f2f;
+    --gold: #e8b84b;
+    --grad: linear-gradient(135deg, #ff8a1e 0%, #ffb152 50%, #e8b84b 100%);
+    --radius: 18px;
+    --maxw: 1160px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--txt);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+  .accent { color: var(--amber); }
+  .grad-txt {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* ---------- NAV ---------- */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(14px);
+    background: rgba(10,10,12,0.72);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 70px;
+  }
+  .brand { display: flex; align-items: center; gap: 11px; font-weight: 800; font-size: 1.22rem; letter-spacing: -0.02em; }
+  .brand .mark {
+    width: 34px; height: 34px; border-radius: 9px;
+    background: var(--grad);
+    display: grid; place-items: center;
+    color: #1a1205; font-weight: 900; font-size: 1.1rem;
+    box-shadow: 0 4px 20px rgba(255,138,30,0.35);
+  }
+  .nav-links { display: flex; gap: 30px; align-items: center; }
+  .nav-links a { color: var(--muted); font-size: 0.94rem; transition: color .2s; }
+  .nav-links a:hover { color: var(--txt); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 22px; border-radius: 11px;
+    font-weight: 700; font-size: 0.94rem; cursor: pointer;
+    border: 1px solid transparent; transition: transform .15s, box-shadow .2s, background .2s;
+  }
+  .btn-primary { background: var(--grad); color: #1a1205; box-shadow: 0 6px 24px rgba(255,138,30,0.32); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255,138,30,0.45); }
+  .btn-ghost { background: transparent; border-color: var(--line); color: var(--txt); }
+  .btn-ghost:hover { border-color: var(--amber); color: var(--amber); }
+  .nav-cta { display: flex; gap: 12px; align-items: center; }
+
+  /* ---------- HERO ---------- */
+  .hero { position: relative; padding: 110px 0 90px; text-align: center; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(560px 360px at 50% -8%, rgba(255,138,30,0.18), transparent 70%),
+      radial-gradient(700px 460px at 84% 20%, rgba(214,47,47,0.10), transparent 70%);
+    z-index: -1;
+  }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 16px; border-radius: 100px;
+    border: 1px solid var(--line); background: var(--bg-soft);
+    font-size: 0.82rem; color: var(--muted); margin-bottom: 26px;
+  }
+  .pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 10px var(--amber); }
+  .hero h1 {
+    font-size: clamp(2.4rem, 5.6vw, 4.1rem);
+    line-height: 1.05; letter-spacing: -0.03em; font-weight: 850;
+    max-width: 880px; margin: 0 auto 22px;
+  }
+  .hero p.lead {
+    font-size: clamp(1.05rem, 2vw, 1.28rem); color: var(--muted);
+    max-width: 660px; margin: 0 auto 38px;
+  }
+  .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .hero-stats {
+    display: flex; gap: 48px; justify-content: center; flex-wrap: wrap;
+    margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--line);
+  }
+  .stat .num { font-size: 2.2rem; font-weight: 850; letter-spacing: -0.02em; }
+  .stat .lbl { font-size: 0.85rem; color: var(--muted-2); text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* ---------- SECTION HEADERS ---------- */
+  section { padding: 84px 0; }
+  .sec-tag {
+    display: inline-block; font-size: 0.78rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.14em; color: var(--amber); margin-bottom: 14px;
+  }
+  .sec-title { font-size: clamp(1.8rem, 3.4vw, 2.6rem); letter-spacing: -0.025em; font-weight: 820; max-width: 720px; }
+  .sec-sub { color: var(--muted); font-size: 1.06rem; max-width: 640px; margin-top: 14px; }
+  .sec-head.center { text-align: center; margin: 0 auto; }
+  .sec-head.center .sec-title, .sec-head.center .sec-sub { margin-left: auto; margin-right: auto; }
+
+  /* ---------- FEATURES ---------- */
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 52px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 30px; transition: transform .2s, border-color .2s, background .2s;
+  }
+  .card:hover { transform: translateY(-4px); border-color: #3a3a47; background: var(--card-2); }
+  .ico {
+    width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center;
+    background: rgba(255,138,30,0.12); border: 1px solid rgba(255,138,30,0.25);
+    font-size: 1.4rem; margin-bottom: 18px;
+  }
+  .card h3 { font-size: 1.2rem; margin-bottom: 8px; letter-spacing: -0.01em; }
+  .card p { color: var(--muted); font-size: 0.96rem; }
+
+  /* ---------- FLOW / HOW IT WORKS ---------- */
+  .flow-wrap { background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 52px; }
+  .flow-node {
+    position: relative; background: var(--card); border: 1px solid var(--line);
+    border-radius: 14px; padding: 24px 22px;
+  }
+  .flow-node .step { font-size: 0.78rem; font-weight: 800; color: var(--amber); letter-spacing: 0.1em; }
+  .flow-node h4 { margin: 8px 0 6px; font-size: 1.06rem; }
+  .flow-node p { color: var(--muted); font-size: 0.9rem; }
+  .flow-node .loc { display: inline-block; margin-top: 12px; font-size: 0.74rem; color: var(--muted-2);
+    border: 1px solid var(--line); padding: 3px 10px; border-radius: 100px; }
+  .flow-node::after {
+    content: "→"; position: absolute; right: -16px; top: 50%; transform: translateY(-50%);
+    color: var(--amber); font-size: 1.3rem; z-index: 2;
+  }
+  .flow-node:last-child::after { display: none; }
+
+  /* ---------- COMPANIES ---------- */
+  .companies-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 52px; }
+  .company {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 28px; transition: border-color .2s, transform .2s;
+    display: flex; flex-direction: column;
+  }
+  .company:hover { border-color: var(--amber); transform: translateY(-4px); }
+  .company.featured { border-color: rgba(255,138,30,0.5); background: linear-gradient(180deg, rgba(255,138,30,0.06), var(--card)); }
+  .company-head { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .company-logo {
+    width: 64px; height: 64px; border-radius: 12px; object-fit: cover;
+    background: #000; border: 1px solid var(--line); flex-shrink: 0;
+  }
+  .company-logo.placeholder {
+    display: grid; place-items: center; font-weight: 900; font-size: 1.3rem; color: #1a1205;
+  }
+  .company-head .meta h4 { font-size: 1.12rem; }
+  .company-head .meta span { font-size: 0.82rem; color: var(--muted-2); }
+  .company .tag {
+    align-self: flex-start; font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; padding: 4px 11px; border-radius: 100px; margin-bottom: 14px;
+  }
+  .tag.core { background: rgba(232,184,75,0.14); color: var(--gold); border: 1px solid rgba(232,184,75,0.3); }
+  .tag.partner { background: rgba(154,154,166,0.12); color: var(--muted); border: 1px solid var(--line); }
+  .company p { color: var(--muted); font-size: 0.93rem; flex: 1; }
+  .company .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+  .chip { font-size: 0.74rem; color: var(--muted); background: var(--bg-soft); border: 1px solid var(--line); padding: 4px 10px; border-radius: 7px; }
+
+  /* ---------- MATRIX TABLE ---------- */
+  .matrix { margin-top: 44px; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { text-align: left; padding: 16px 22px; font-size: 0.92rem; }
+  thead th { background: var(--bg-soft); color: var(--amber); font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  tbody tr { border-top: 1px solid var(--line); }
+  tbody td:first-child { font-weight: 700; }
+  td .pri { font-weight: 700; }
+  .pri.crit { color: var(--red); }
+  .pri.high { color: var(--amber); }
+  .pri.med { color: var(--gold); }
+  .pri.core { color: #4ec77d; }
+
+  /* ---------- CTA ---------- */
+  .cta-band { text-align: center; }
+  .cta-box {
+    background: linear-gradient(135deg, rgba(255,138,30,0.10), rgba(214,47,47,0.07));
+    border: 1px solid rgba(255,138,30,0.3); border-radius: 26px;
+    padding: 64px 32px;
+  }
+  .cta-box h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing: -0.025em; margin-bottom: 16px; }
+  .cta-box p { color: var(--muted); max-width: 520px; margin: 0 auto 30px; font-size: 1.08rem; }
+
+  /* ---------- FOOTER ---------- */
+  footer { border-top: 1px solid var(--line); padding: 54px 0 40px; color: var(--muted); }
+  .foot-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
+  .foot-col h5 { color: var(--txt); font-size: 0.9rem; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .foot-col a { display: block; color: var(--muted); font-size: 0.9rem; margin-bottom: 9px; transition: color .2s; }
+  .foot-col a:hover { color: var(--amber); }
+  .foot-bottom { margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 0.84rem; color: var(--muted-2); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px) {
+    .grid-3, .companies-grid { grid-template-columns: 1fr 1fr; }
+    .flow { grid-template-columns: 1fr 1fr; }
+    .flow-node:nth-child(2)::after { display: none; }
+    .nav-links { display: none; }
+  }
+  @media (max-width: 620px) {
+    .grid-3, .companies-grid, .flow { grid-template-columns: 1fr; }
+    .flow-node::after { content: "↓"; right: 50%; top: auto; bottom: -22px; transform: translateX(50%); }
+    .flow-node:last-child::after { display: none; }
+    .hero-stats { gap: 30px; }
+    .matrix { overflow-x: auto; }
+    table { min-width: 560px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand"><span class="mark">O</span> Orquestra</a>
+    <nav class="nav-links">
+      <a href="#funcionalidades">Funcionalidades</a>
+      <a href="#fluxo">Como funciona</a>
+      <a href="#empresas">Empresas</a>
+      <a href="#matriz">Atribuição</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-ghost">Entrar</a>
+      <a href="#cta" class="btn btn-primary">Começar agora</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="pill"><span class="dot"></span> Engenharia distribuída, sob controlo único</div>
+    <h1>Orquestre tarefas de engenharia com <span class="grad-txt">equipas internacionais</span></h1>
+    <p class="lead">Distribua módulos críticos entre o seu core local e consultorias estrangeiras, monitorize o esforço em tempo real e mantenha cada equipa sincronizada — independentemente do fuso horário.</p>
+    <div class="hero-cta">
+      <a href="#cta" class="btn btn-primary">Criar workspace gratuito</a>
+      <a href="#fluxo" class="btn btn-ghost">Ver demonstração</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="num grad-txt">14</div><div class="lbl">Fusos horários</div></div>
+      <div class="stat"><div class="num grad-txt">98%</div><div class="lbl">Entregas no prazo</div></div>
+      <div class="stat"><div class="num grad-txt">+40</div><div class="lbl">Consultorias ligadas</div></div>
+      <div class="stat"><div class="num grad-txt">24/7</div><div class="lbl">Monitorização</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="funcionalidades">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="sec-tag">Plataforma</span>
+      <h2 class="sec-title">Tudo o que precisa para coordenar engenharia além-fronteiras</h2>
+      <p class="sec-sub">Da atribuição de módulos críticos à auditoria de custos, o Orquestra dá visibilidade total sobre quem faz o quê, onde e com que complexidade.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="ico">🧩</div>
+        <h3>Distribuição de módulos</h3>
+        <p>Atribua componentes técnicos a equipas internas ou consultorias externas com responsável, localização e nível de complexidade definidos.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🌍</div>
+        <h3>Equipas multissectoriais</h3>
+        <p>Conecte o core local e freelancers seniores num único painel, com perfis, fusos horários e disponibilidade sincronizados.</p>
+      </div>
+      <div class="card">
+        <div class="ico">📊</div>
+        <h3>Matriz de esforço</h3>
+        <p>Acompanhe a distribuição real de horas e custo por equipa, módulo e país — pronta para auditoria e justificação orçamental.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🔐</div>
+        <h3>Acessos e segurança</h3>
+        <p>Controlo granular por papel, tokens de acesso encriptados e trilho de auditoria completo para projetos confidenciais.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🔁</div>
+        <h3>Fluxos automatizados</h3>
+        <p>Modele dependências entre tarefas — do pedido de streaming à geração de URLs — e veja bloqueios antes de acontecerem.</p>
+      </div>
+      <div class="card">
+        <div class="ico">📈</div>
+        <h3>Relatórios executivos</h3>
+        <p>Gere relatórios técnicos de distribuição de esforço prontos para a direção, com um clique e classificação de confidencialidade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<div class="flow-wrap">
+  <section id="fluxo">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-tag">Como funciona</span>
+        <h2 class="sec-title">Da atribuição à entrega, num fluxo único</h2>
+        <p class="sec-sub">Cada equipa vê apenas o seu segmento de responsabilidade — o Orquestra liga as pontas e mostra o quadro completo à coordenação.</p>
+      </div>
+      <div class="flow">
+        <div class="flow-node">
+          <span class="step">01 · CORE</span>
+          <h4>Definir o projeto</h4>
+          <p>A equipa core modela regras de negócio, catálogo e estrutura de dados.</p>
+          <span class="loc">📍 Local</span>
+        </div>
+        <div class="flow-node">
+          <span class="step">02 · ATRIBUIR</span>
+          <h4>Distribuir módulos</h4>
+          <p>Cada módulo crítico é atribuído à consultoria ou freelancer certo.</p>
+          <span class="loc">🌍 Internacional</span>
+        </div>
+        <div class="flow-node">
+          <span class="step">03 · EXECUTAR</span>
+          <h4>Trabalho paralelo</h4>
+          <p>Equipas executam em simultâneo com sincronização e visibilidade.</p>
+          <span class="loc">⚡ Tempo real</span>
+        </div>
+        <div class="flow-node">
+          <span class="step">04 · AUDITAR</span>
+          <h4>Consolidar esforço</h4>
+          <p>O sistema agrega custo e horas num relatório de distribuição pronto.</p>
+          <span class="loc">📑 Direção</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- COMPANIES -->
+<section id="empresas">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="sec-tag">Empresas na plataforma</span>
+      <h2 class="sec-title">Quem já orquestra a sua engenharia connosco</h2>
+      <p class="sec-sub">Organizações que coordenam equipas locais e consultorias internacionais através do Orquestra.</p>
+    </div>
+    <div class="companies-grid">
+
+      <!-- MBC (featured, real logo from root) -->
+      <div class="company featured">
+        <span class="tag core">Cliente em destaque</span>
+        <div class="company-head">
+          <img class="company-logo" src="logo_mbc.png" alt="Logótipo MBC — Sons de Angola" />
+          <div class="meta">
+            <h4>MBC — Sons de Angola</h4>
+            <span>Music Business Corporation · Angola</span>
+          </div>
+        </div>
+        <p>Ecossistema de streaming musical que distribuiu a sua engenharia entre o core em Angola e consultorias na Alemanha, EUA, Reino Unido e Portugal.</p>
+        <div class="chips">
+          <span class="chip">Streaming</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">Cloudflare R2</span>
+          <span class="chip">PWA</span>
+        </div>
+      </div>
+
+      <div class="company">
+        <span class="tag partner">Consultoria</span>
+        <div class="company-head">
+          <div class="company-logo placeholder" style="background:linear-gradient(135deg,#3b82f6,#60a5fa)">DS</div>
+          <div class="meta">
+            <h4>DataShield Engineers</h4>
+            <span>Segurança & BD · Alemanha / EUA</span>
+          </div>
+        </div>
+        <p>Otimização PostgreSQL, mitigação de concorrência e encriptação de tokens JWT para plataformas de alta carga.</p>
+        <div class="chips">
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Segurança</span>
+          <span class="chip">JWT</span>
+        </div>
+      </div>
+
+      <div class="company">
+        <span class="tag partner">Consultoria</span>
+        <div class="company-head">
+          <div class="company-logo placeholder" style="background:linear-gradient(135deg,#8b5cf6,#a78bfa)">CA</div>
+          <div class="meta">
+            <h4>CloudArch Experts</h4>
+            <span>Arquitetura Cloud · Reino Unido / EUA</span>
+          </div>
+        </div>
+        <p>Armazenamento de alto rendimento, URLs presignadas de curta duração e segurança Edge em escala global.</p>
+        <div class="chips">
+          <span class="chip">Cloudflare</span>
+          <span class="chip">Edge / CDN</span>
+          <span class="chip">Presigned URLs</span>
+        </div>
+      </div>
+
+      <div class="company">
+        <span class="tag partner">Freelancers</span>
+        <div class="company-head">
+          <div class="company-logo placeholder" style="background:linear-gradient(135deg,#10b981,#34d399)">PW</div>
+          <div class="meta">
+            <h4>PWA Collective</h4>
+            <span>UX & PWA Sénior · Portugal</span>
+          </div>
+        </div>
+        <p>Rotas SPA rápidas, Service Workers para cache de áudio e integração com a Media Session API do sistema operativo.</p>
+        <div class="chips">
+          <span class="chip">PWA</span>
+          <span class="chip">Service Workers</span>
+          <span class="chip">UX</span>
+        </div>
+      </div>
+
+      <div class="company">
+        <span class="tag partner">Cliente</span>
+        <div class="company-head">
+          <div class="company-logo placeholder" style="background:linear-gradient(135deg,#f59e0b,#fbbf24)">NV</div>
+          <div class="meta">
+            <h4>Nova Logística</h4>
+            <span>Cadeia de abastecimento · Brasil</span>
+          </div>
+        </div>
+        <p>Coordena equipas de back-end em três continentes para uma plataforma de rastreio em tempo real.</p>
+        <div class="chips">
+          <span class="chip">Logística</span>
+          <span class="chip">IoT</span>
+          <span class="chip">Realtime</span>
+        </div>
+      </div>
+
+      <div class="company">
+        <span class="tag partner">Cliente</span>
+        <div class="company-head">
+          <div class="company-logo placeholder" style="background:linear-gradient(135deg,#ef4444,#f87171)">FT</div>
+          <div class="meta">
+            <h4>FinTrust</h4>
+            <span>Serviços financeiros · Moçambique</span>
+          </div>
+        </div>
+        <p>Distribui auditoria de segurança e desenvolvimento de APIs entre equipas internas e parceiros certificados.</p>
+        <div class="chips">
+          <span class="chip">Fintech</span>
+          <span class="chip">Compliance</span>
+          <span class="chip">APIs</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MATRIX -->
+<section id="matriz" class="flow-wrap" style="background:var(--bg-soft)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">Exemplo real · MBC</span>
+      <h2 class="sec-title">Matriz de atribuição de componentes</h2>
+      <p class="sec-sub">Veja como o Orquestra estrutura a distribuição de esforço — inspirado no relatório de engenharia híbrida da MBC.</p>
+    </div>
+    <div class="matrix">
+      <table>
+        <thead>
+          <tr>
+            <th>Módulo técnico</th>
+            <th>Equipa responsável</th>
+            <th>Localização</th>
+            <th>Natureza do trabalho</th>
+            <th>Complexidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Segurança, Encriptação & BD</td>
+            <td>Database & Security Engineers</td>
+            <td>Alemanha & EUA</td>
+            <td>Consultoria de segurança e base de dados</td>
+            <td><span class="pri crit">Crítica</span></td>
+          </tr>
+          <tr>
+            <td>Arquitetura Cloud & Storage</td>
+            <td>Cloud Architecture Experts</td>
+            <td>Reino Unido & EUA</td>
+            <td>Desenho de Cloud Edge & CDN</td>
+            <td><span class="pri high">Alta</span></td>
+          </tr>
+          <tr>
+            <td>Service Workers & PWA</td>
+            <td>Freelancers Seniores</td>
+            <td>Portugal</td>
+            <td>Front-End & Caching</td>
+            <td><span class="pri med">Média</span></td>
+          </tr>
+          <tr>
+            <td>Gestão da Plataforma (FastAPI)</td>
+            <td>Equipa Core MBC</td>
+            <td>Angola</td>
+            <td>Core & Modelação BD</td>
+            <td><span class="pri core">Core Business</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta" class="cta-band">
+  <div class="wrap">
+    <div class="cta-box">
+      <h2>Pronto para orquestrar a sua engenharia global?</h2>
+      <p>Crie o seu workspace, convide as suas equipas internacionais e tenha a primeira matriz de esforço pronta em minutos.</p>
+      <div class="hero-cta">
+        <a href="#" class="btn btn-primary">Criar workspace gratuito</a>
+        <a href="#" class="btn btn-ghost">Falar com vendas</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col" style="max-width:280px">
+        <a href="#" class="brand" style="margin-bottom:14px"><span class="mark">O</span> Orquestra</a>
+        <p style="color:var(--muted);font-size:0.9rem">Gestão de engenharia para equipas internacionais. Distribua, monitorize e entregue — sem fronteiras.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Produto</h5>
+        <a href="#funcionalidades">Funcionalidades</a>
+        <a href="#fluxo">Como funciona</a>
+        <a href="#matriz">Matriz de esforço</a>
+        <a href="#">Integrações</a>
+      </div>
+      <div class="foot-col">
+        <h5>Empresas</h5>
+        <a href="#empresas">Clientes</a>
+        <a href="#">Consultorias</a>
+        <a href="#">Tornar-se parceiro</a>
+      </div>
+      <div class="foot-col">
+        <h5>Recursos</h5>
+        <a href="#">Documentação</a>
+        <a href="#">Segurança</a>
+        <a href="#">Contacto</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Orquestra. Todos os direitos reservados.</span>
+      <span>Construído para colaboração eficiente · Confidencial / Direção</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
