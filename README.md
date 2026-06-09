@@ -1,22 +1,22 @@
 # effective-colaborate
 
-**Orquestra** — protótipo de landing page para uma plataforma de gestão de tarefas de engenharia com equipas internacionais.
+**Orquestra** — landing page prototype for a platform that helps companies manage engineering tasks across international teams.
 
-A plataforma permite que uma empresa distribua módulos críticos entre o seu *core* local e consultorias estrangeiras, monitorize o esforço em tempo real e mantenha cada equipa sincronizada.
+The platform lets a company distribute critical modules between its local *core* and overseas consultancies, track effort in real time, and keep every team in sync.
 
-## Conteúdo
+## Contents
 
-- `index.html` — landing page completa (HTML + CSS, sem dependências).
-- `logo_mbc.png` — logótipo usado na secção de empresas (MBC — Sons de Angola).
+- `index.html` — full landing page (HTML + CSS, no dependencies).
+- `logo_mbc.png` — logo used in the companies and case-study sections (MBC — Sons de Angola).
 
-## Secções da página
+## Page sections
 
-1. **Hero** — proposta de valor e métricas.
-2. **Funcionalidades** — distribuição de módulos, equipas multissectoriais, matriz de esforço, segurança, fluxos e relatórios.
-3. **Como funciona** — fluxo de 4 passos (definir → atribuir → executar → auditar).
-4. **Empresas** — clientes e consultorias na plataforma, com a **MBC** em destaque.
-5. **Matriz de atribuição** — exemplo real inspirado no relatório de engenharia híbrida da MBC.
+1. **Hero** — value proposition and key metrics.
+2. **Features** — module distribution, multi-sector teams, effort matrix, security, automated workflows, and executive reports.
+3. **How it works** — a 4-step flow (define → assign → execute → audit).
+4. **Companies** — customers and consultancies on the platform, with **MBC** featured.
+5. **Case study** — MBC's real component-assignment matrix, generated on the platform.
 
-## Como visualizar
+## How to view
 
-Abra `index.html` num navegador.
+Open `index.html` in a browser.

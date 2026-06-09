@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Orquestra — Gestão de Engenharia para Equipas Internacionais</title>
-<meta name="description" content="Orquestra distribui, monitoriza e sincroniza tarefas de engenharia entre equipas internacionais — do core local às consultorias estrangeiras." />
+<title>Orquestra — Engineering Task Management for International Teams</title>
+<meta name="description" content="Orquestra distributes, monitors and syncs engineering tasks across international teams — from your local core to overseas consultancies." />
 <style>
   :root {
     --bg: #0a0a0c;
@@ -183,6 +183,10 @@
   .company .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
   .chip { font-size: 0.74rem; color: var(--muted); background: var(--bg-soft); border: 1px solid var(--line); padding: 4px 10px; border-radius: 7px; }
 
+  /* ---------- CASE STUDY ---------- */
+  .case-head { display: flex; align-items: center; gap: 18px; margin-bottom: 8px; }
+  .case-logo { width: 84px; height: 84px; border-radius: 16px; object-fit: cover; background:#000; border:1px solid var(--line); }
+
   /* ---------- MATRIX TABLE ---------- */
   .matrix { margin-top: 44px; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
   table { width: 100%; border-collapse: collapse; }
@@ -238,14 +242,14 @@
   <div class="wrap nav">
     <a href="#" class="brand"><span class="mark">O</span> Orquestra</a>
     <nav class="nav-links">
-      <a href="#funcionalidades">Funcionalidades</a>
-      <a href="#fluxo">Como funciona</a>
-      <a href="#empresas">Empresas</a>
-      <a href="#matriz">Atribuição</a>
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#companies">Companies</a>
+      <a href="#case-study">Case study</a>
     </nav>
     <div class="nav-cta">
-      <a href="#" class="btn btn-ghost">Entrar</a>
-      <a href="#cta" class="btn btn-primary">Começar agora</a>
+      <a href="#" class="btn btn-ghost">Sign in</a>
+      <a href="#cta" class="btn btn-primary">Get started</a>
     </div>
   </div>
 </header>
@@ -253,98 +257,98 @@
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="pill"><span class="dot"></span> Engenharia distribuída, sob controlo único</div>
-    <h1>Orquestre tarefas de engenharia com <span class="grad-txt">equipas internacionais</span></h1>
-    <p class="lead">Distribua módulos críticos entre o seu core local e consultorias estrangeiras, monitorize o esforço em tempo real e mantenha cada equipa sincronizada — independentemente do fuso horário.</p>
+    <div class="pill"><span class="dot"></span> Distributed engineering, under one roof</div>
+    <h1>Manage engineering tasks across <span class="grad-txt">international teams</span></h1>
+    <p class="lead">Distribute critical modules between your local core and overseas consultancies, track effort in real time, and keep every team in sync — no matter the time zone.</p>
     <div class="hero-cta">
-      <a href="#cta" class="btn btn-primary">Criar workspace gratuito</a>
-      <a href="#fluxo" class="btn btn-ghost">Ver demonstração</a>
+      <a href="#cta" class="btn btn-primary">Create free workspace</a>
+      <a href="#how" class="btn btn-ghost">See how it works</a>
     </div>
     <div class="hero-stats">
-      <div class="stat"><div class="num grad-txt">14</div><div class="lbl">Fusos horários</div></div>
-      <div class="stat"><div class="num grad-txt">98%</div><div class="lbl">Entregas no prazo</div></div>
-      <div class="stat"><div class="num grad-txt">+40</div><div class="lbl">Consultorias ligadas</div></div>
-      <div class="stat"><div class="num grad-txt">24/7</div><div class="lbl">Monitorização</div></div>
+      <div class="stat"><div class="num grad-txt">14</div><div class="lbl">Time zones</div></div>
+      <div class="stat"><div class="num grad-txt">98%</div><div class="lbl">On-time delivery</div></div>
+      <div class="stat"><div class="num grad-txt">40+</div><div class="lbl">Connected consultancies</div></div>
+      <div class="stat"><div class="num grad-txt">24/7</div><div class="lbl">Monitoring</div></div>
     </div>
   </div>
 </section>
 
 <!-- FEATURES -->
-<section id="funcionalidades">
+<section id="features">
   <div class="wrap">
     <div class="sec-head center">
-      <span class="sec-tag">Plataforma</span>
-      <h2 class="sec-title">Tudo o que precisa para coordenar engenharia além-fronteiras</h2>
-      <p class="sec-sub">Da atribuição de módulos críticos à auditoria de custos, o Orquestra dá visibilidade total sobre quem faz o quê, onde e com que complexidade.</p>
+      <span class="sec-tag">Platform</span>
+      <h2 class="sec-title">Everything you need to coordinate engineering across borders</h2>
+      <p class="sec-sub">From assigning critical modules to auditing costs, Orquestra gives full visibility into who does what, where, and at which complexity.</p>
     </div>
     <div class="grid-3">
       <div class="card">
         <div class="ico">🧩</div>
-        <h3>Distribuição de módulos</h3>
-        <p>Atribua componentes técnicos a equipas internas ou consultorias externas com responsável, localização e nível de complexidade definidos.</p>
+        <h3>Module distribution</h3>
+        <p>Assign technical components to in-house teams or external consultancies, each with an owner, location, and complexity level defined.</p>
       </div>
       <div class="card">
         <div class="ico">🌍</div>
-        <h3>Equipas multissectoriais</h3>
-        <p>Conecte o core local e freelancers seniores num único painel, com perfis, fusos horários e disponibilidade sincronizados.</p>
+        <h3>Multi-sector teams</h3>
+        <p>Connect your local core and senior freelancers in a single dashboard, with profiles, time zones, and availability all in sync.</p>
       </div>
       <div class="card">
         <div class="ico">📊</div>
-        <h3>Matriz de esforço</h3>
-        <p>Acompanhe a distribuição real de horas e custo por equipa, módulo e país — pronta para auditoria e justificação orçamental.</p>
+        <h3>Effort matrix</h3>
+        <p>Track real hours and cost distribution by team, module, and country — ready for audit and budget justification.</p>
       </div>
       <div class="card">
         <div class="ico">🔐</div>
-        <h3>Acessos e segurança</h3>
-        <p>Controlo granular por papel, tokens de acesso encriptados e trilho de auditoria completo para projetos confidenciais.</p>
+        <h3>Access & security</h3>
+        <p>Granular role-based control, encrypted access tokens, and a complete audit trail for confidential projects.</p>
       </div>
       <div class="card">
         <div class="ico">🔁</div>
-        <h3>Fluxos automatizados</h3>
-        <p>Modele dependências entre tarefas — do pedido de streaming à geração de URLs — e veja bloqueios antes de acontecerem.</p>
+        <h3>Automated workflows</h3>
+        <p>Model dependencies between tasks — from streaming request to URL generation — and catch blockers before they happen.</p>
       </div>
       <div class="card">
         <div class="ico">📈</div>
-        <h3>Relatórios executivos</h3>
-        <p>Gere relatórios técnicos de distribuição de esforço prontos para a direção, com um clique e classificação de confidencialidade.</p>
+        <h3>Executive reports</h3>
+        <p>Generate technical effort-distribution reports ready for leadership in one click, with a confidentiality classification.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FLOW -->
+<!-- HOW IT WORKS -->
 <div class="flow-wrap">
-  <section id="fluxo">
+  <section id="how">
     <div class="wrap">
       <div class="sec-head">
-        <span class="sec-tag">Como funciona</span>
-        <h2 class="sec-title">Da atribuição à entrega, num fluxo único</h2>
-        <p class="sec-sub">Cada equipa vê apenas o seu segmento de responsabilidade — o Orquestra liga as pontas e mostra o quadro completo à coordenação.</p>
+        <span class="sec-tag">How it works</span>
+        <h2 class="sec-title">From assignment to delivery, in one flow</h2>
+        <p class="sec-sub">Each team sees only its slice of responsibility — Orquestra connects the dots and shows coordination the full picture.</p>
       </div>
       <div class="flow">
         <div class="flow-node">
           <span class="step">01 · CORE</span>
-          <h4>Definir o projeto</h4>
-          <p>A equipa core modela regras de negócio, catálogo e estrutura de dados.</p>
+          <h4>Define the project</h4>
+          <p>The core team models business rules, catalogue, and data structure.</p>
           <span class="loc">📍 Local</span>
         </div>
         <div class="flow-node">
-          <span class="step">02 · ATRIBUIR</span>
-          <h4>Distribuir módulos</h4>
-          <p>Cada módulo crítico é atribuído à consultoria ou freelancer certo.</p>
-          <span class="loc">🌍 Internacional</span>
+          <span class="step">02 · ASSIGN</span>
+          <h4>Distribute modules</h4>
+          <p>Each critical module is assigned to the right consultancy or freelancer.</p>
+          <span class="loc">🌍 International</span>
         </div>
         <div class="flow-node">
-          <span class="step">03 · EXECUTAR</span>
-          <h4>Trabalho paralelo</h4>
-          <p>Equipas executam em simultâneo com sincronização e visibilidade.</p>
-          <span class="loc">⚡ Tempo real</span>
+          <span class="step">03 · EXECUTE</span>
+          <h4>Parallel work</h4>
+          <p>Teams build simultaneously with real-time sync and visibility.</p>
+          <span class="loc">⚡ Real time</span>
         </div>
         <div class="flow-node">
-          <span class="step">04 · AUDITAR</span>
-          <h4>Consolidar esforço</h4>
-          <p>O sistema agrega custo e horas num relatório de distribuição pronto.</p>
-          <span class="loc">📑 Direção</span>
+          <span class="step">04 · AUDIT</span>
+          <h4>Consolidate effort</h4>
+          <p>The system aggregates cost and hours into a ready-to-share report.</p>
+          <span class="loc">📑 Leadership</span>
         </div>
       </div>
     </div>
@@ -352,26 +356,26 @@
 </div>
 
 <!-- COMPANIES -->
-<section id="empresas">
+<section id="companies">
   <div class="wrap">
     <div class="sec-head center">
-      <span class="sec-tag">Empresas na plataforma</span>
-      <h2 class="sec-title">Quem já orquestra a sua engenharia connosco</h2>
-      <p class="sec-sub">Organizações que coordenam equipas locais e consultorias internacionais através do Orquestra.</p>
+      <span class="sec-tag">Companies on the platform</span>
+      <h2 class="sec-title">Teams already orchestrating engineering with us</h2>
+      <p class="sec-sub">Organizations coordinating local teams and international consultancies through Orquestra.</p>
     </div>
     <div class="companies-grid">
 
       <!-- MBC (featured, real logo from root) -->
       <div class="company featured">
-        <span class="tag core">Cliente em destaque</span>
+        <span class="tag core">Featured customer</span>
         <div class="company-head">
-          <img class="company-logo" src="logo_mbc.png" alt="Logótipo MBC — Sons de Angola" />
+          <img class="company-logo" src="logo_mbc.png" alt="MBC — Sons de Angola logo" />
           <div class="meta">
             <h4>MBC — Sons de Angola</h4>
             <span>Music Business Corporation · Angola</span>
           </div>
         </div>
-        <p>Ecossistema de streaming musical que distribuiu a sua engenharia entre o core em Angola e consultorias na Alemanha, EUA, Reino Unido e Portugal.</p>
+        <p>A music streaming ecosystem that distributed its engineering between a core team in Angola and consultancies in Germany, the US, the UK, and Portugal.</p>
         <div class="chips">
           <span class="chip">Streaming</span>
           <span class="chip">FastAPI</span>
@@ -381,32 +385,32 @@
       </div>
 
       <div class="company">
-        <span class="tag partner">Consultoria</span>
+        <span class="tag partner">Consultancy</span>
         <div class="company-head">
           <div class="company-logo placeholder" style="background:linear-gradient(135deg,#3b82f6,#60a5fa)">DS</div>
           <div class="meta">
             <h4>DataShield Engineers</h4>
-            <span>Segurança & BD · Alemanha / EUA</span>
+            <span>Security & DB · Germany / US</span>
           </div>
         </div>
-        <p>Otimização PostgreSQL, mitigação de concorrência e encriptação de tokens JWT para plataformas de alta carga.</p>
+        <p>PostgreSQL optimization, concurrency mitigation, and JWT token encryption for high-load platforms.</p>
         <div class="chips">
           <span class="chip">PostgreSQL</span>
-          <span class="chip">Segurança</span>
+          <span class="chip">Security</span>
           <span class="chip">JWT</span>
         </div>
       </div>
 
       <div class="company">
-        <span class="tag partner">Consultoria</span>
+        <span class="tag partner">Consultancy</span>
         <div class="company-head">
           <div class="company-logo placeholder" style="background:linear-gradient(135deg,#8b5cf6,#a78bfa)">CA</div>
           <div class="meta">
             <h4>CloudArch Experts</h4>
-            <span>Arquitetura Cloud · Reino Unido / EUA</span>
+            <span>Cloud Architecture · UK / US</span>
           </div>
         </div>
-        <p>Armazenamento de alto rendimento, URLs presignadas de curta duração e segurança Edge em escala global.</p>
+        <p>High-performance storage, short-lived presigned URLs, and Edge security at global scale.</p>
         <div class="chips">
           <span class="chip">Cloudflare</span>
           <span class="chip">Edge / CDN</span>
@@ -420,10 +424,10 @@
           <div class="company-logo placeholder" style="background:linear-gradient(135deg,#10b981,#34d399)">PW</div>
           <div class="meta">
             <h4>PWA Collective</h4>
-            <span>UX & PWA Sénior · Portugal</span>
+            <span>Senior UX & PWA · Portugal</span>
           </div>
         </div>
-        <p>Rotas SPA rápidas, Service Workers para cache de áudio e integração com a Media Session API do sistema operativo.</p>
+        <p>Fast SPA routes, Service Workers for audio caching, and OS integration via the Media Session API.</p>
         <div class="chips">
           <span class="chip">PWA</span>
           <span class="chip">Service Workers</span>
@@ -432,32 +436,32 @@
       </div>
 
       <div class="company">
-        <span class="tag partner">Cliente</span>
+        <span class="tag partner">Customer</span>
         <div class="company-head">
           <div class="company-logo placeholder" style="background:linear-gradient(135deg,#f59e0b,#fbbf24)">NV</div>
           <div class="meta">
-            <h4>Nova Logística</h4>
-            <span>Cadeia de abastecimento · Brasil</span>
+            <h4>Nova Logistics</h4>
+            <span>Supply chain · Brazil</span>
           </div>
         </div>
-        <p>Coordena equipas de back-end em três continentes para uma plataforma de rastreio em tempo real.</p>
+        <p>Coordinates back-end teams across three continents for a real-time tracking platform.</p>
         <div class="chips">
-          <span class="chip">Logística</span>
+          <span class="chip">Logistics</span>
           <span class="chip">IoT</span>
           <span class="chip">Realtime</span>
         </div>
       </div>
 
       <div class="company">
-        <span class="tag partner">Cliente</span>
+        <span class="tag partner">Customer</span>
         <div class="company-head">
           <div class="company-logo placeholder" style="background:linear-gradient(135deg,#ef4444,#f87171)">FT</div>
           <div class="meta">
             <h4>FinTrust</h4>
-            <span>Serviços financeiros · Moçambique</span>
+            <span>Financial services · Mozambique</span>
           </div>
         </div>
-        <p>Distribui auditoria de segurança e desenvolvimento de APIs entre equipas internas e parceiros certificados.</p>
+        <p>Distributes security audits and API development across internal teams and certified partners.</p>
         <div class="chips">
           <span class="chip">Fintech</span>
           <span class="chip">Compliance</span>
@@ -469,52 +473,57 @@
   </div>
 </section>
 
-<!-- MATRIX -->
-<section id="matriz" class="flow-wrap" style="background:var(--bg-soft)">
+<!-- CASE STUDY (MBC) -->
+<section id="case-study" class="flow-wrap" style="background:var(--bg-soft)">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-tag">Exemplo real · MBC</span>
-      <h2 class="sec-title">Matriz de atribuição de componentes</h2>
-      <p class="sec-sub">Veja como o Orquestra estrutura a distribuição de esforço — inspirado no relatório de engenharia híbrida da MBC.</p>
+      <span class="sec-tag">Customer case study</span>
+      <div class="case-head">
+        <img class="case-logo" src="logo_mbc.png" alt="MBC — Sons de Angola logo" />
+        <div>
+          <h2 class="sec-title" style="font-size:clamp(1.6rem,3vw,2.2rem)">How MBC distributed its engineering</h2>
+        </div>
+      </div>
+      <p class="sec-sub" style="max-width:760px">MBC (Music Business Corporation) used Orquestra to split its streaming platform across a local core and four overseas specialist teams. This is the component-assignment matrix it produced — generated directly from the platform.</p>
     </div>
     <div class="matrix">
       <table>
         <thead>
           <tr>
-            <th>Módulo técnico</th>
-            <th>Equipa responsável</th>
-            <th>Localização</th>
-            <th>Natureza do trabalho</th>
-            <th>Complexidade</th>
+            <th>Technical module</th>
+            <th>Responsible team</th>
+            <th>Location</th>
+            <th>Nature of work</th>
+            <th>Complexity</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Segurança, Encriptação & BD</td>
+            <td>Security, Encryption & DB</td>
             <td>Database & Security Engineers</td>
-            <td>Alemanha & EUA</td>
-            <td>Consultoria de segurança e base de dados</td>
-            <td><span class="pri crit">Crítica</span></td>
+            <td>Germany & US</td>
+            <td>Security & database consulting</td>
+            <td><span class="pri crit">Critical</span></td>
           </tr>
           <tr>
-            <td>Arquitetura Cloud & Storage</td>
+            <td>Cloud Architecture & Storage</td>
             <td>Cloud Architecture Experts</td>
-            <td>Reino Unido & EUA</td>
-            <td>Desenho de Cloud Edge & CDN</td>
-            <td><span class="pri high">Alta</span></td>
+            <td>UK & US</td>
+            <td>Cloud Edge & CDN design</td>
+            <td><span class="pri high">High</span></td>
           </tr>
           <tr>
             <td>Service Workers & PWA</td>
-            <td>Freelancers Seniores</td>
+            <td>Senior Freelancers</td>
             <td>Portugal</td>
             <td>Front-End & Caching</td>
-            <td><span class="pri med">Média</span></td>
+            <td><span class="pri med">Medium</span></td>
           </tr>
           <tr>
-            <td>Gestão da Plataforma (FastAPI)</td>
-            <td>Equipa Core MBC</td>
+            <td>Platform Management (FastAPI)</td>
+            <td>MBC Core Team</td>
             <td>Angola</td>
-            <td>Core & Modelação BD</td>
+            <td>Core development & DB modeling</td>
             <td><span class="pri core">Core Business</span></td>
           </tr>
         </tbody>
@@ -527,11 +536,11 @@
 <section id="cta" class="cta-band">
   <div class="wrap">
     <div class="cta-box">
-      <h2>Pronto para orquestrar a sua engenharia global?</h2>
-      <p>Crie o seu workspace, convide as suas equipas internacionais e tenha a primeira matriz de esforço pronta em minutos.</p>
+      <h2>Ready to orchestrate your global engineering?</h2>
+      <p>Create your workspace, invite your international teams, and have your first effort matrix ready in minutes.</p>
       <div class="hero-cta">
-        <a href="#" class="btn btn-primary">Criar workspace gratuito</a>
-        <a href="#" class="btn btn-ghost">Falar com vendas</a>
+        <a href="#" class="btn btn-primary">Create free workspace</a>
+        <a href="#" class="btn btn-ghost">Talk to sales</a>
       </div>
     </div>
   </div>
@@ -543,31 +552,31 @@
     <div class="foot-grid">
       <div class="foot-col" style="max-width:280px">
         <a href="#" class="brand" style="margin-bottom:14px"><span class="mark">O</span> Orquestra</a>
-        <p style="color:var(--muted);font-size:0.9rem">Gestão de engenharia para equipas internacionais. Distribua, monitorize e entregue — sem fronteiras.</p>
+        <p style="color:var(--muted);font-size:0.9rem">Engineering task management for international teams. Distribute, monitor, and deliver — without borders.</p>
       </div>
       <div class="foot-col">
-        <h5>Produto</h5>
-        <a href="#funcionalidades">Funcionalidades</a>
-        <a href="#fluxo">Como funciona</a>
-        <a href="#matriz">Matriz de esforço</a>
-        <a href="#">Integrações</a>
+        <h5>Product</h5>
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#case-study">Effort matrix</a>
+        <a href="#">Integrations</a>
       </div>
       <div class="foot-col">
-        <h5>Empresas</h5>
-        <a href="#empresas">Clientes</a>
-        <a href="#">Consultorias</a>
-        <a href="#">Tornar-se parceiro</a>
+        <h5>Companies</h5>
+        <a href="#companies">Customers</a>
+        <a href="#">Consultancies</a>
+        <a href="#">Become a partner</a>
       </div>
       <div class="foot-col">
-        <h5>Recursos</h5>
-        <a href="#">Documentação</a>
-        <a href="#">Segurança</a>
-        <a href="#">Contacto</a>
+        <h5>Resources</h5>
+        <a href="#">Documentation</a>
+        <a href="#">Security</a>
+        <a href="#">Contact</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Orquestra. Todos os direitos reservados.</span>
-      <span>Construído para colaboração eficiente · Confidencial / Direção</span>
+      <span>© 2026 Orquestra. All rights reserved.</span>
+      <span>Built for efficient collaboration</span>
     </div>
   </div>
 </footer>
