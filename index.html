@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Orquestra — Engineering Task Management for International Teams</title>
 <meta name="description" content="Orquestra distributes, monitors and syncs engineering tasks across international teams — from your local core to overseas consultancies." />
+
+<!-- Social sharing -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Orquestra" />
+<meta property="og:title" content="Orquestra — Engineering Task Management for International Teams" />
+<meta property="og:description" content="Distribute critical modules between your local core and overseas consultancies, track effort in real time, and keep every team in sync." />
+<meta property="og:url" content="https://kissabi.github.io/effective-colaborate/" />
+<meta property="og:image" content="https://kissabi.github.io/effective-colaborate/logo_mbc.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Orquestra — Engineering Task Management for International Teams" />
+<meta name="twitter:description" content="Distribute critical modules between your local core and overseas consultancies, track effort in real time, and keep every team in sync." />
+<meta name="twitter:image" content="https://kissabi.github.io/effective-colaborate/logo_mbc.png" />
 <style>
   :root {
     --bg: #0a0a0c;
@@ -235,6 +247,41 @@
   .cta-box h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing: -0.025em; margin-bottom: 16px; }
   .cta-box p { color: var(--muted); max-width: 520px; margin: 0 auto 30px; font-size: 1.08rem; }
 
+  /* ---------- BLOG CARDS ---------- */
+  .blog-card { display: flex; flex-direction: column; }
+  .blog-cat { align-self: flex-start; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--amber); margin-bottom: 14px; }
+  .blog-card h3 { font-size: 1.18rem; line-height: 1.3; margin-bottom: 10px; }
+  .blog-card p { flex: 1; }
+  .blog-meta { margin-top: 16px; font-size: 0.82rem; color: var(--muted-2); }
+
+  /* ---------- CONTACT FORM (FormGrid) ---------- */
+  .fg-contact-form {
+    max-width: 520px; margin: 44px auto 0; padding: 30px;
+    border-radius: var(--radius); background: var(--card); border: 1px solid var(--line);
+    text-align: left;
+  }
+  .fg-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+  .fg-field label { font-size: 0.86rem; font-weight: 600; color: var(--txt); }
+  .fg-field input, .fg-field textarea {
+    padding: 11px 13px; border-radius: 10px; background: var(--bg-soft);
+    border: 1px solid var(--line); color: var(--txt); font-size: 0.94rem;
+    font-family: inherit; outline: none; transition: border-color .15s, box-shadow .15s;
+  }
+  .fg-field input::placeholder, .fg-field textarea::placeholder { color: var(--muted-2); }
+  .fg-field input:focus, .fg-field textarea:focus {
+    border-color: var(--amber); box-shadow: 0 0 0 3px rgba(255,138,30,0.18);
+  }
+  .fg-field textarea { resize: vertical; }
+  .fg-button {
+    width: 100%; display: inline-flex; align-items: center; justify-content: center;
+    padding: 13px 18px; border-radius: 11px; border: none; cursor: pointer;
+    background: var(--grad); color: #1a1205; font-size: 0.96rem; font-weight: 700;
+    margin-top: 6px; box-shadow: 0 6px 24px rgba(255,138,30,0.32);
+    transition: transform .15s, box-shadow .2s;
+  }
+  .fg-button:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255,138,30,0.45); }
+  .fg-button:active { transform: translateY(0); }
+
   /* ---------- FOOTER ---------- */
   footer { border-top: 1px solid var(--line); padding: 54px 0 40px; color: var(--muted); }
   .foot-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
@@ -271,6 +318,7 @@
       <a href="#how">How it works</a>
       <a href="#companies">Companies</a>
       <a href="#case-study">Case studies</a>
+      <a href="blog/">Blog</a>
     </nav>
     <div class="nav-cta">
       <a href="#" class="btn btn-ghost">Sign in</a>
@@ -525,22 +573,22 @@
         <a href="#" class="read-more">Read the story →</a>
       </div>
 
-      <!-- MBC (featured, in the middle) -->
-      <div class="case-card featured">
-        <span class="featured-tag">Featured</span>
+      <!-- Rakuten -->
+      <div class="case-card">
+        <span class="featured-tag" style="color:var(--muted);background:rgba(154,154,166,0.12);border-color:var(--line)">E-commerce</span>
         <div class="ch">
-          <div class="clogo"><img src="logo_mbc.png" alt="MBC — Sons de Angola logo" style="width:100%;height:100%;object-fit:contain;border-radius:4px" /></div>
+          <div class="clogo icon"><img src="https://cdn.simpleicons.org/rakuten/BF0000" alt="Rakuten logo" style="width:100%;height:100%;object-fit:contain" /></div>
           <div>
-            <h4>MBC — Sons de Angola</h4>
-            <span>Angola · Music streaming</span>
+            <h4>Rakuten</h4>
+            <span>Japan · E-commerce & fintech</span>
           </div>
         </div>
-        <p>Split its streaming platform across a local core in Angola and four overseas specialist teams in Germany, the US, the UK, and Portugal — coordinated entirely through Orquestra.</p>
+        <p>Coordinated marketplace and payments teams between Tokyo, Paris, and Bangalore, mapping each module to the right specialist hub with full cost visibility.</p>
         <div class="case-metrics">
-          <div class="m"><div class="v grad-txt">5</div><div class="k">Countries</div></div>
-          <div class="m"><div class="v grad-txt">−38%</div><div class="k">Bandwidth cost</div></div>
+          <div class="m"><div class="v grad-txt">3</div><div class="k">Regions</div></div>
+          <div class="m"><div class="v grad-txt">2x</div><div class="k">Release speed</div></div>
         </div>
-        <a href="#mbc-matrix" class="read-more">See the effort matrix →</a>
+        <a href="#" class="read-more">Read the story →</a>
       </div>
 
       <!-- Nubank -->
@@ -562,75 +610,69 @@
       </div>
 
     </div>
+  </div>
+</section>
 
-    <!-- MBC detailed matrix -->
-    <div id="mbc-matrix" class="sec-head" style="margin-top:72px">
-      <span class="sec-tag">Inside the featured case</span>
-      <div class="case-head">
-        <img class="case-logo" src="logo_mbc.png" alt="MBC — Sons de Angola logo" />
-        <div>
-          <h2 class="sec-title" style="font-size:clamp(1.6rem,3vw,2.2rem)">MBC's component-assignment matrix</h2>
-        </div>
-      </div>
-      <p class="sec-sub" style="max-width:760px">The full breakdown MBC produced in Orquestra — every critical module mapped to the team, location, and complexity that owns it.</p>
+<!-- BLOG -->
+<section id="blog">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="sec-tag">Blog</span>
+      <h2 class="sec-title">From the Orquestra blog</h2>
+      <p class="sec-sub">Stories and playbooks on running engineering across borders.</p>
     </div>
-    <div class="matrix">
-      <table>
-        <thead>
-          <tr>
-            <th>Technical module</th>
-            <th>Responsible team</th>
-            <th>Location</th>
-            <th>Nature of work</th>
-            <th>Complexity</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Security, Encryption & DB</td>
-            <td>Database & Security Engineers</td>
-            <td>Germany & US</td>
-            <td>Security & database consulting</td>
-            <td><span class="pri crit">Critical</span></td>
-          </tr>
-          <tr>
-            <td>Cloud Architecture & Storage</td>
-            <td>Cloud Architecture Experts</td>
-            <td>UK & US</td>
-            <td>Cloud Edge & CDN design</td>
-            <td><span class="pri high">High</span></td>
-          </tr>
-          <tr>
-            <td>Service Workers & PWA</td>
-            <td>Senior Freelancers</td>
-            <td>Portugal</td>
-            <td>Front-End & Caching</td>
-            <td><span class="pri med">Medium</span></td>
-          </tr>
-          <tr>
-            <td>Platform Management (FastAPI)</td>
-            <td>MBC Core Team</td>
-            <td>Angola</td>
-            <td>Core development & DB modeling</td>
-            <td><span class="pri core">Core Business</span></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="grid-3">
+      <a class="card blog-card" href="blog/mbc-orquestra.html">
+        <span class="blog-cat">Case study</span>
+        <h3>How MBC uses Orquestra to optimize its services</h3>
+        <p>Inside the music streaming platform that split its engineering across five countries — and cut bandwidth costs by 38%.</p>
+        <span class="blog-meta">June 9, 2026 · 6 min read</span>
+      </a>
+      <a class="card blog-card" href="blog/">
+        <span class="blog-cat">Playbook</span>
+        <h3>Assigning critical modules without losing the plot</h3>
+        <p>A practical guide to mapping technical modules to the right team, location, and complexity level.</p>
+        <span class="blog-meta">Coming soon</span>
+      </a>
+      <a class="card blog-card" href="blog/">
+        <span class="blog-cat">Engineering</span>
+        <h3>Effort matrices that survive an audit</h3>
+        <p>Turning real hours and cost into a report your finance team and your engineers both trust.</p>
+        <span class="blog-meta">Coming soon</span>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="blog/" class="btn btn-ghost">Visit the blog</a>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section id="cta" class="cta-band">
+<!-- CTA + CONTACT FORM -->
+<section id="cta" class="cta-band flow-wrap" style="background:var(--bg-soft)">
   <div class="wrap">
-    <div class="cta-box">
-      <h2>Ready to orchestrate your global engineering?</h2>
-      <p>Create your workspace, invite your international teams, and have your first effort matrix ready in minutes.</p>
-      <div class="hero-cta">
-        <a href="#" class="btn btn-primary">Create free workspace</a>
-        <a href="#" class="btn btn-ghost">Talk to sales</a>
-      </div>
+    <div class="sec-head center" style="margin-bottom:8px">
+      <h2 class="sec-title" style="margin:0 auto">Ready to orchestrate your global engineering?</h2>
+      <p class="sec-sub" style="margin:14px auto 0">Tell us about your teams and we'll set up your workspace. We usually reply within 24 hours.</p>
     </div>
+    <form action="https://formgrid.dev/api/f/qlr5er4g" method="POST" class="fg-contact-form">
+      <div class="fg-field">
+        <label for="fg-name">Name</label>
+        <input id="fg-name" type="text" name="name" placeholder="Jane Doe" required>
+      </div>
+      <div class="fg-field">
+        <label for="fg-email">Work email</label>
+        <input id="fg-email" type="email" name="email" placeholder="you@example.com" required>
+      </div>
+      <div class="fg-field">
+        <label for="fg-company">Company</label>
+        <input id="fg-company" type="text" name="company" placeholder="Your company">
+      </div>
+      <div class="fg-field">
+        <label for="fg-message">How can we help?</label>
+        <textarea id="fg-message" name="message" rows="4" placeholder="Tell us about your teams and where they are based." required></textarea>
+      </div>
+      <button type="submit" class="fg-button">Send message</button>
+    </form>
   </div>
 </section>
 
@@ -646,7 +688,7 @@
         <h5>Product</h5>
         <a href="#features">Features</a>
         <a href="#how">How it works</a>
-        <a href="#case-study">Effort matrix</a>
+        <a href="#case-study">Case studies</a>
         <a href="#">Integrations</a>
       </div>
       <div class="foot-col">
@@ -657,9 +699,10 @@
       </div>
       <div class="foot-col">
         <h5>Resources</h5>
+        <a href="blog/">Blog</a>
         <a href="#">Documentation</a>
         <a href="#">Security</a>
-        <a href="#">Contact</a>
+        <a href="#cta">Contact</a>
       </div>
     </div>
     <div class="foot-bottom">

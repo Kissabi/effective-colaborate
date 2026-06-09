@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog — Orquestra</title>
+<meta name="description" content="Stories and playbooks on running engineering across borders, from the Orquestra team." />
+
+<!-- Social sharing -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Orquestra Blog" />
+<meta property="og:title" content="Orquestra Blog — Engineering across borders" />
+<meta property="og:description" content="Stories and playbooks on running engineering across borders." />
+<meta property="og:url" content="https://kissabi.github.io/effective-colaborate/blog/" />
+<meta property="og:image" content="https://kissabi.github.io/effective-colaborate/logo_mbc.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Orquestra Blog — Engineering across borders" />
+<meta name="twitter:description" content="Stories and playbooks on running engineering across borders." />
+<meta name="twitter:image" content="https://kissabi.github.io/effective-colaborate/logo_mbc.png" />
+
+<style>
+  :root {
+    --bg: #0a0a0c; --bg-soft: #121216; --card: #16161c; --card-2: #1c1c24; --line: #2a2a33;
+    --txt: #f4f4f6; --muted: #9a9aa6; --muted-2: #6f6f7a;
+    --amber: #ff8a1e; --grad: linear-gradient(135deg, #ff8a1e 0%, #ffb152 50%, #e8b84b 100%);
+    --radius: 18px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--txt); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+  header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(14px);
+    background: rgba(10,10,12,0.72); border-bottom: 1px solid var(--line); }
+  .nav { max-width: 1160px; margin: 0 auto; padding: 0 24px; height: 70px; display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 11px; font-weight: 800; font-size: 1.22rem; letter-spacing: -0.02em; }
+  .brand .mark { width: 34px; height: 34px; border-radius: 9px; background: var(--grad);
+    display: grid; place-items: center; color: #1a1205; font-weight: 900; font-size: 1.1rem; }
+  .nav a.back { color: var(--muted); font-size: 0.92rem; }
+  .nav a.back:hover { color: var(--amber); }
+
+  .head { padding: 72px 0 8px; }
+  .eyebrow { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--amber); }
+  .head h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); letter-spacing: -0.03em; font-weight: 850; margin: 14px 0 12px; }
+  .head p { color: var(--muted); font-size: 1.1rem; max-width: 560px; }
+
+  .posts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; padding: 48px 0 80px; }
+  .post { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px;
+    display: flex; flex-direction: column; transition: transform .2s, border-color .2s, background .2s; }
+  .post:hover { transform: translateY(-4px); border-color: #3a3a47; background: var(--card-2); }
+  .post .cat { align-self: flex-start; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--amber); margin-bottom: 14px; }
+  .post h3 { font-size: 1.2rem; line-height: 1.3; margin-bottom: 10px; }
+  .post p { color: var(--muted); font-size: 0.94rem; flex: 1; }
+  .post .meta { margin-top: 16px; font-size: 0.82rem; color: var(--muted-2); }
+  .post.featured { grid-column: 1 / -1; flex-direction: row; gap: 28px; align-items: center; }
+  .post.featured .logo { width: 120px; height: 120px; border-radius: 16px; object-fit: contain; background: #000; border: 1px solid var(--line); padding: 14px; flex-shrink: 0; }
+  .post.featured .body { display: flex; flex-direction: column; }
+
+  footer { border-top: 1px solid var(--line); padding: 36px 0; color: var(--muted-2); font-size: 0.85rem; text-align: center; }
+  @media (max-width: 820px) { .posts { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 620px) { .posts { grid-template-columns: 1fr; } .post.featured { flex-direction: column; align-items: flex-start; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand"><span class="mark">O</span> Orquestra</a>
+    <a href="../index.html" class="back">← Back to site</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="head">
+    <span class="eyebrow">Blog</span>
+    <h1>Engineering across borders</h1>
+    <p>Stories and playbooks on distributing engineering work across international teams.</p>
+  </div>
+
+  <div class="posts">
+
+    <a class="post featured" href="mbc-orquestra.html">
+      <img class="logo" src="../logo_mbc.png" alt="MBC — Sons de Angola logo" />
+      <div class="body">
+        <span class="cat">Featured · Case study</span>
+        <h3>How MBC uses Orquestra to optimize its services</h3>
+        <p>Inside MBC — Sons de Angola: the music streaming platform that split its engineering across five countries with Orquestra, cutting bandwidth costs by 38% and eliminating buffering breaks.</p>
+        <span class="meta">June 9, 2026 · 6 min read</span>
+      </div>
+    </a>
+
+    <div class="post">
+      <span class="cat">Playbook</span>
+      <h3>Assigning critical modules without losing the plot</h3>
+      <p>A practical guide to mapping technical modules to the right team, location, and complexity level.</p>
+      <span class="meta">Coming soon</span>
+    </div>
+
+    <div class="post">
+      <span class="cat">Engineering</span>
+      <h3>Effort matrices that survive an audit</h3>
+      <p>Turning real hours and cost into a report your finance team and your engineers both trust.</p>
+      <span class="meta">Coming soon</span>
+    </div>
+
+    <div class="post">
+      <span class="cat">Operations</span>
+      <h3>Running standups across 14 time zones</h3>
+      <p>How distributed teams stay in sync without forcing anyone into a 3 a.m. call.</p>
+      <span class="meta">Coming soon</span>
+    </div>
+
+  </div>
+</div>
+
+<footer>© 2026 Orquestra. Built for efficient collaboration.</footer>
+
+</body>
+</html>
